@@ -17,35 +17,40 @@
     </div>
     @endif
 
+    
+
     <div class="container mt-4">
         <div class="row g-4">
             <div class="col-md-2">
-                <div class="row g-4">
-                    <div class="col-12">
-                        <div class="filter-box">
-                            <h5>Categories</h5>
-                            <ul class="list-unstyled">
-                                <li><a href="#">Electronics</a></li>
-                                <li><a href="#">Fashion</a></li>
-                                <li><a href="#">Home Appliances</a></li>
-                                <li><a href="#">Books</a></li>
-                                <li><a href="#">Sports</a></li>
-                            </ul>
+                <div class="sticky-top">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">Filters</h5>
                         </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="filter-box">
-                            <h5>Price Range</h5>
+                        <div class="card-body">
+                            <!-- Category Filter -->
+                            <h6 class="mb-3">Categories</h6>
+                            <ul class="list-unstyled">
+                                <li><a href="#" class="text-success">Electronics</a></li>
+                                <li><a href="#" class="text-success">Fashion</a></li>
+                                <li><a href="#" class="text-success">Home Appliances</a></li>
+                                <li><a href="#" class="text-success">Books</a></li>
+                                <li><a href="#" class="text-success">Sports</a></li>
+                            </ul>
+                            <hr>
+
+                            <!-- Price Range Filter -->
+                            <h6 class="mb-3">Price Range</h6>
                             <form action="{{ url('/filter-products') }}" method="GET">
-                                <div class="mb-2">
+                                <div class="mb-3">
                                     <label for="min-price" class="form-label">Min Price</label>
-                                    <input type="number" class="form-control" id="min-price" name="min-price" placeholder="₹0">
+                                    <input type="number" class="form-control" id="min-price" name="min-price" placeholder="₹0" min="0">
                                 </div>
-                                <div class="mb-2">
+                                <div class="mb-3">
                                     <label for="max-price" class="form-label">Max Price</label>
-                                    <input type="number" class="form-control" id="max-price" name="max-price" placeholder="₹5000">
+                                    <input type="number" class="form-control" id="max-price" name="max-price" placeholder="₹5000" min="0">
                                 </div>
-                                <button type="submit" class="btn btn-primary mt-2">Apply Filter</button>
+                                <button type="submit" class="btn btn-success w-100">Apply Filter</button>
                             </form>
                         </div>
                     </div>
@@ -77,6 +82,9 @@
                 </div>
             </div>
         </div>
+        <br>
+        <br>
+        <br>
     </div>
 
 @include('public_layout.footer')

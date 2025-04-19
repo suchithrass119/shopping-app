@@ -1,6 +1,4 @@
-    <br>
-        <br>
-        <br>
+
     <footer>
         <p class="mb-0">© {{ date('Y') }} HELOIDE. All rights reserved. | Designed with 💚 for shoppers.</p>
     </footer>
@@ -19,3 +17,4 @@
 </body>
 
 </html>
+

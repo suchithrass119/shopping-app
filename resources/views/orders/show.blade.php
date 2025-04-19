@@ -1,106 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Details - Shopping App</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #f8f9fa;
-        }
-
-        header {
-            background-color: #2874f0;
-            color: white;
-            padding: 1.5rem 2rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            font-size: 1.75rem;
-            font-weight: 600;
-        }
-
-        .order-card {
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
-            margin-top: 30px;
-            background-color: #ffffff;
-        }
-
-        .order-card .card-header {
-            background-color: #2874f0;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            border-top-left-radius: 12px;
-            border-top-right-radius: 12px;
-        }
-
-        .order-card .card-body {
-            padding: 2rem;
-        }
-
-        .order-status {
-            padding: 0.4rem 0.8rem;
-            font-weight: bold;
-        }
-
-        .btn-view {
-            background-color: #fb641b;
-            color: white;
-            font-weight: 600;
-            border-radius: 5px;
-            padding: 0.75rem 2rem;
-            text-transform: uppercase;
-        }
-
-        .btn-view:hover {
-            background-color: #fbbc4f;
-            color: white;
-        }
-
-        .table th,
-        .table td {
-            vertical-align: middle;
-        }
-
-        .badge-completed {
-            background-color: #28a745;
-        }
-
-        .badge-pending {
-            background-color: #ffc107;
-        }
-
-        @media (max-width: 768px) {
-            .order-card .card-body {
-                padding: 1rem;
-            }
-
-            .btn-view {
-                width: 100%;
-                padding: 0.5rem 1.5rem;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-    <header class="bg-primary text-white py-3 px-4 d-flex justify-content-between align-items-center flex-wrap shadow-sm">
-        <div class="d-flex align-items-center mb-2 mb-md-0">
-            <h1 class="h5 m-0"> 🛍️ Shopping App</h1>
-        </div>
+@include('public_layout.header')
         <div>
             <a href="{{ url('/') }}" class="btn btn-light btn-sm">
                 🏠 Home
             </a>
         </div>
     </header>
+       
 
     <div class="container">
         <div class="order-card">
@@ -144,7 +49,6 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    
+    @include('public_layout.footer')
 
-</html>

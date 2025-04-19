@@ -19,7 +19,7 @@
             border-radius: 12px;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
             padding: 2rem;
-            max-width: 600px;
+            max-width: 700px;
             margin: 2rem auto;
         }
 
@@ -52,6 +52,63 @@
         .btn-razorpay:focus {
             outline: none;
         }
+
+        .btn-cancel {
+            background-color: #f44336;
+            color: #fff;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            width: 100%;
+            border: none;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .btn-cancel:hover {
+            background-color: #e53935;
+        }
+
+        .btn-cancel:active {
+            background-color: #c62828;
+        }
+
+        .btn-cancel:focus {
+            outline: none;
+        }
+
+        /* Flexbox layout for the two buttons */
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .button-group .btn {
+            flex: 1;
+        }
+
+        @media (max-width: 576px) {
+            .payment-section {
+                padding: 1rem;
+                margin: 1rem;
+            }
+
+            .btn-razorpay,
+            .btn-cancel {
+                font-size: 1rem;
+            }
+
+            /* Stack buttons on mobile */
+            .button-group {
+                flex-direction: column;
+            }
+
+            .button-group .btn {
+                margin-bottom: 1rem;
+            }
+        }
     </style>
 </head>
 
@@ -63,9 +120,16 @@
 
             <p class="text-center text-muted mb-4">Click below to proceed with the payment using Razorpay.</p>
 
-            <button id="rzp-button" class="btn-razorpay">
-                Pay ₹{{ number_format($amount, 2) }} with Razorpay
-            </button>
+            <div class="button-group">
+                <button id="rzp-button" class="btn-razorpay">
+                    Pay ₹{{ number_format($amount, 2) }} with Razorpay
+                </button>
+
+                <!-- Cancel Button -->
+                <a href="{{ url('/cart') }}" class="btn-cancel">
+                    Cancel and Go Back
+                </a>
+            </div>
         </div>
     </div>
 

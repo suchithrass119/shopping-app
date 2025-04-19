@@ -9,9 +9,9 @@ use App\Http\Controllers\CartController;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\OrderController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
